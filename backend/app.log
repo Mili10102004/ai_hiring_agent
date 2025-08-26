@@ -170,3 +170,12 @@ WARNING:werkzeug: * Debugger is active!
 INFO:werkzeug: * Debugger PIN: 170-352-985
 INFO:werkzeug: * Detected change in 'C:\\Program Files\\Python312\\Lib\\abc.py', reloading
 INFO:werkzeug: * Detected change in 'C:\\Program Files\\Python312\\Lib\\stat.py', reloading
+INFO:werkzeug: * Restarting with watchdog (windowsapi)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 170-352-985
+INFO:werkzeug: * Detected change in 'C:\\Users\\Acer\\Desktop\\new_project\\backend\\data_utils.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\Acer\\Desktop\\new_project\\backend\\llm_api.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\Acer\\Desktop\\new_project\\backend\\resume_parser.py', reloading
+INFO:werkzeug: * Restarting with watchdog (windowsapi)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 170-352-985
