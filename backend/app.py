@@ -40,28 +40,23 @@ def upload_resume():
 @app.route('/api/logs', methods=['POST'])
 def save_logs():
     data = request.json
-    log_entry = f"""
-CANDIDATE SCREENING SUMMARY
-==========================
-
-Personal Information:
-- Name: {data.get('name', '')}
-- Email: {data.get('email', '')}
-- Phone: {data.get('phone', '')}
-- Location: {data.get('location', '')}
-- Experience: {data.get('experience', '')}
-- Position: {data.get('position', '')}
-
-Technical Stack:
-- {', '.join(data.get('techStack', []))}
-
-Screening Date: {data.get('submittedAt', '')}
-
-"""
-    log_path = os.path.join(os.path.dirname(__file__), "app.log")
+    import json
+    applications_file = os.path.join(os.path.dirname(__file__), "applications.json")
+    # Load existing applications
     try:
-        with open(log_path, "a", encoding="utf-8") as f:
-            f.write(log_entry)
+        if os.path.exists(applications_file):
+            with open(applications_file, "r", encoding="utf-8") as f:
+                applications = json.load(f)
+        else:
+            applications = []
+    except Exception:
+        applications = []
+    # Add new application
+    applications.append(data)
+    # Save back to file
+    try:
+        with open(applications_file, "w", encoding="utf-8") as f:
+            json.dump(applications, f, indent=2)
         return jsonify({"success": True}), 200
     except Exception as e:
         return jsonify({"success": False, "error": str(e)}), 500
